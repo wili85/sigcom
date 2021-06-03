@@ -35,12 +35,12 @@ class MantenController extends Controller
 
         $id_user = Auth::user()->id;
 		//$persona = new Persona;
-		//$maestra_model = new TablaMaestra;
-		//$motivo = $maestra_model->getMaestroByTipo("MOTIVO_S");
+		$maestra_model = new TablaMaestra;
+		$tipo = $maestra_model->getTipo();
 		//$moneda = $maestra_model->getMaestroByTipo("MONEDA");
         //$tipo = $maestra_model->getMaestroByTipo("TIPO_G");
 
-        return view('frontend.manten.create', compact('id_user'));
+        return view('frontend.manten.create', compact('id_user','tipo'));
     }
 	
 	public function create_color()

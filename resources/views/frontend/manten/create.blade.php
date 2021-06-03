@@ -192,8 +192,8 @@ label.form-control-sm{
 
 @section('breadcrumb')
 <ol class="breadcrumb" style="padding-left:130px;margin-top:0px;background-color:#283659">
-    <li class="breadcrumb-item text-primary">Inicio</li>
-    <li class="breadcrumb-item active">Cronográma</li>
+    <li class="breadcrumb-item text-primary">Mantenimiento</li>
+    <li class="breadcrumb-item active">Tabla Maestra</li>
     </li>
 </ol>
 @endsection
@@ -244,7 +244,7 @@ label.form-control-sm{
                                                 <div id="" class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <strong>
-                                                            Datos del Cronográma
+                                                            Registro de Tabla Maestra
                                                         </strong>
                                                     </div>
                                                 </div>
@@ -342,13 +342,18 @@ label.form-control-sm{
 						<div class="card">
 
 						<div class="card-header">
-							<strong>Lista de Tabla Mestra</strong>
+							<strong>Lista de Tabla Maestra</strong>
 						</div>
 
 						<div class="row" style="padding:10px 20px 10px 20px;">
 
-							<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
-								<input class="form-control form-control-sm" id="tipo_buscar" name="tipo_buscar" placeholder="Tipo">
+							<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+								<select name="tipo_buscar" id="tipo_buscar" class="form-control form-control-sm">
+									<option value="">Seleccionar</option>
+									<?php foreach($tipo as $row):?>
+									<option value="<?php echo $row->tipo?>"><?php echo $row->tipo_nombre?></option>
+									<?php  endforeach;?>
+								</select>
 							</div>
 
 							<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">

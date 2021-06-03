@@ -187,7 +187,15 @@ class TablaMaestra extends Model
         return $data[0]->fecha_servidor;
     }
 
+	function getTipo(){
 
+        $cad = "select distinct tipo,(case when tipo='CSS' then tipo else tipo_nombre end)tipo_nombre 
+				from tabla_maestras 
+				order by 1";
+
+		$data = DB::select($cad);
+        return $data;
+    }
 
 	
 

@@ -29,6 +29,8 @@ $(document).ready(function () {
 		changeMonth: true,
 		changeYear: true,
     });
+	
+	$("#tipo_buscar").select2();
 });
 
 
@@ -208,7 +210,9 @@ function datatablenew(){
 }
 
 function fn_ListarBusqueda() {
-    datatablenew();
+    //datatablenew();
+	$('#tblMaestra').DataTable().ajax.reload();
+	
 };
 
 function obtenerMaestra(id){

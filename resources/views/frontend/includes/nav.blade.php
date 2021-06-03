@@ -60,13 +60,18 @@
                     aria-haspopup="true" aria-expanded="false">Mantenimiento</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
                             <a href="{{route('frontend.manten.create')}}" class="dropdown-item">Tabla Maestra</a>
-							<a href="{{route('frontend.manten.create_color')}}" class="dropdown-item">Configuraci&oacute;n Colores</a>
-							<a href="{{route('frontend.manten.send_restablecer_color')}}" class="dropdown-item">Reestablecer Colores</a>
-							
-							
 							<a href="{{route('frontend.persona.listar')}}" class="dropdown-item">Persona</a>
 							<a href="{{route('frontend.empresa.listar')}}" class="dropdown-item">Empresa</a>
 							
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Configuraci&oacute;n</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+                            <a href="{{route('frontend.manten.create_color')}}" class="dropdown-item">Configuraci&oacute;n Colores</a>
+							<a href="{{route('frontend.manten.send_restablecer_color')}}" class="dropdown-item">Reestablecer Colores</a>
                     </div>
                 </li>
 				

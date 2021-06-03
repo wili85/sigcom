@@ -195,8 +195,8 @@ label.form-control-sm{
 
 @section('breadcrumb')
 <ol class="breadcrumb" style="padding-left:130px;margin-top:0px;background-color:#283659">
-    <li class="breadcrumb-item text-primary">Inicio</li>
-    <li class="breadcrumb-item active">Mantenimiento de Persona</li>
+    <li class="breadcrumb-item text-primary">Mantenimiento</li>
+    <li class="breadcrumb-item active">Persona</li>
     </li>
 </ol>
 @endsection
