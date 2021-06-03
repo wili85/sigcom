@@ -62,6 +62,11 @@
                             <a href="{{route('frontend.manten.create')}}" class="dropdown-item">Tabla Maestra</a>
 							<a href="{{route('frontend.manten.create_color')}}" class="dropdown-item">Configuraci&oacute;n Colores</a>
 							<a href="{{route('frontend.manten.send_restablecer_color')}}" class="dropdown-item">Reestablecer Colores</a>
+							
+							
+							<a href="{{route('frontend.persona.listar')}}" class="dropdown-item">Persona</a>
+							<a href="{{route('frontend.empresa.listar')}}" class="dropdown-item">Empresa</a>
+							
                     </div>
                 </li>
 				

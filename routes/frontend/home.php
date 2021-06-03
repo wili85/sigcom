@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\CronogramaController;
 use App\Http\Controllers\Frontend\FacturaController;
 use App\Http\Controllers\Frontend\ReporteController;
 use App\Http\Controllers\Frontend\GraficoController;
+use App\Http\Controllers\Frontend\EmpresaController;
 
 /*
  * Frontend Controllers
@@ -83,6 +84,17 @@ Route::get('reporte/exportar_resumen_ingreso/{fecha_desde}/{fecha_hasta}', [Repo
 Route::get('reporte/exportar_individual_resumen_ingreso/{fecha}', [ReporteController::class, 'exportar_individual_resumen_ingreso'])->name('reporte.exportar_individual_resumen_ingreso');
 
 Route::get('grafico/all/{anio?}', [GraficoController::class, 'all'])->name('grafico.all');
+
+/*********************************/
+
+Route::get('persona/listar', [PersonaController::class, 'listar'])->name('persona.listar');
+Route::post('persona/listar_persona_ajax', [PersonaController::class, 'listar_persona_ajax'])->name('persona.listar_persona_ajax');
+Route::get('persona/obtener_tarifa/{id}', [PersonaController::class, 'obtener_tarifa'])->name('prestamo.obtener_tarifa');
+
+Route::get('empresa/listar', [EmpresaController::class, 'listar'])->name('empresa.listar');
+Route::post('empresa/listar_empresa_ajax', [EmpresaController::class, 'listar_empresa_ajax'])->name('empresa.listar_empresa_ajax');
+Route::get('empresa/obtener_vehiculo/{id}', [EmpresaController::class, 'obtener_vehiculo'])->name('empresa.obtener_vehiculo');
+Route::get('empresa/obtener_chofer/{id}', [EmpresaController::class, 'obtener_chofer'])->name('empresa.obtener_chofer');
 
 /*********test*************/
 Route::get('solicitud/create_test', [SolicitudController::class, 'create_test'])->name('solicitud.create_test');
