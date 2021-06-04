@@ -8,7 +8,7 @@ use DB;
 class Produccione extends Model
 {
     public function listar_produccion_ajax($p){
-		return $this->readFunctionPostgres('sp_listar_compra_paginado',$p);
+		return $this->readFunctionPostgres('sp_listar_produccion_paginado',$p);
     }
 	
 	public function readFunctionPostgres($function, $parameters = null){
