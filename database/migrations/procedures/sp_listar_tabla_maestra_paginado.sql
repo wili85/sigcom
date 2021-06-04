@@ -29,11 +29,11 @@ Begin
 
 
 	If p_tipo<>'' Then
-	 v_where:=v_where||' And tipo like ''%'||p_tipo||'%'' ';
+	 v_where:=v_where||' And tipo = '''||p_tipo||''' ';
 	End If;
 
 	If p_denominacion<>'' Then
-	 v_where:=v_where||' And denominacion like ''%'||p_denominacion||'%'' ';
+	 v_where:=v_where||' And upper(denominacion) like ''%'||upper(p_denominacion)||'%'' ';
 	End If;
 
 	If p_estado<>'' Then

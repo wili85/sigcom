@@ -14,7 +14,9 @@ use App\Http\Controllers\Frontend\FacturaController;
 use App\Http\Controllers\Frontend\ReporteController;
 use App\Http\Controllers\Frontend\GraficoController;
 use App\Http\Controllers\Frontend\EmpresaController;
-
+use App\Http\Controllers\Frontend\CompraController;
+use App\Http\Controllers\Frontend\ProduccionController;
+use App\Http\Controllers\Frontend\VentaController;
 /*
  * Frontend Controllers
  * All route names are prefixed with 'frontend.'.
@@ -95,6 +97,15 @@ Route::get('empresa/listar', [EmpresaController::class, 'listar'])->name('empres
 Route::post('empresa/listar_empresa_ajax', [EmpresaController::class, 'listar_empresa_ajax'])->name('empresa.listar_empresa_ajax');
 Route::get('empresa/obtener_vehiculo/{id}', [EmpresaController::class, 'obtener_vehiculo'])->name('empresa.obtener_vehiculo');
 Route::get('empresa/obtener_chofer/{id}', [EmpresaController::class, 'obtener_chofer'])->name('empresa.obtener_chofer');
+
+Route::get('compra/listar', [CompraController::class, 'listar'])->name('compra.listar');
+Route::post('compra/listar_compra_ajax', [CompraController::class, 'listar_compra_ajax'])->name('compra.listar_compra_ajax');
+
+Route::get('produccion/listar', [ProduccionController::class, 'listar'])->name('produccion.listar');
+Route::post('produccion/listar_produccion_ajax', [ProduccionController::class, 'listar_produccion_ajax'])->name('produccion.listar_produccion_ajax');
+
+Route::get('venta/listar', [VentaController::class, 'listar'])->name('venta.listar');
+Route::post('venta/listar_venta_ajax', [VentaController::class, 'listar_venta_ajax'])->name('venta.listar_venta_ajax');
 
 /*********test*************/
 Route::get('solicitud/create_test', [SolicitudController::class, 'create_test'])->name('solicitud.create_test');

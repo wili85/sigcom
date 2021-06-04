@@ -49,6 +49,35 @@
 				
 				<li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Compra</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+                            <!--<a href="{{route('frontend.solicitud.create')}}" class="dropdown-item">Nueva Solicitud</a>
+							<a href="{{route('frontend.solicitud.create_desembolso')}}" class="dropdown-item">Desembolso</a>-->
+                            <!--
+                            <a href="{{route('frontend.solicitud.create_cronograma')}}" class="dropdown-item">Cronográma</a>
+                            -->
+							<a href="{{route('frontend.compra.listar')}}" class="dropdown-item">Consulta de Compras</a>
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Producci&oacute;n</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+							<a href="{{route('frontend.produccion.listar')}}" class="dropdown-item">Consulta de Producci&oacute;nes</a>
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Venta</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+							<a href="{{route('frontend.venta.listar')}}" class="dropdown-item">Consulta de Ventas</a>
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Estado de Cuenta</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
                             <a href="{{route('frontend.cronograma.create_ingreso')}}" class="dropdown-item">Nuevo Ingreso</a>
