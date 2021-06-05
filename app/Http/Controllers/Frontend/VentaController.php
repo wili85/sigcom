@@ -116,12 +116,18 @@ class VentaController extends Controller
     {
 		$venta = new Venta;
 		$venta->fecha = Carbon::now()->timezone('America/Lima')->format('Y-m-d H:i:s');
-		$venta->id_persona = $request->persona_id;
-		$venta->id_empresa = 1;
+		if($request->persona_id>0){
+			$venta->id_persona = $request->persona_id;
+			$venta->id_empresa = 1;
+		}else{
+			$venta->id_persona = 33;
+			$venta->id_empresa = $request->id_ubicacion;
+		}
 		$venta->estado = "1";
 		$venta->save();
 		$id_venta = $venta->id;
 		
+		$total = 0;
 		if(isset($request->id_especie)):
 			foreach ($request->id_especie as $key => $value):
 				if($request->id_especie[$key]!=""){
@@ -139,9 +145,15 @@ class VentaController extends Controller
 					$ventaDetalle->cantidad = $cantidad_especie;
 					$ventaDetalle->estado = "1";
 					$ventaDetalle->save();
+					
+					$total+=$precio_especie * $cantidad_especie;
 				}
 			endforeach;
 		endif;
+		
+		$venta_act = Venta::find($id_venta);
+		$venta_act->total = $total;
+		$venta_act->save();
 		
 		Session::flash('flash_message', 'Venta registrado exitosamente');
 		
@@ -192,6 +204,7 @@ class VentaController extends Controller
 		$ventaPago->id_venta = $request->id_solicitud;
 		$ventaPago->fecha = Carbon::now()->timezone('America/Lima')->format('Y-m-d H:i:s');
 		$ventaPago->id_forma_pago = $request->id_tipodesembolso;
+		$ventaPago->importe = $request->importe;
 		//$compraPago->ruta_pago = $new_ruta_desembolso;
 		$ventaPago->estado = "1";
 		$ventaPago->save();

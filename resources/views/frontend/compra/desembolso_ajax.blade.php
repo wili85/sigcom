@@ -51,6 +51,14 @@ new AjaxUpload($('#link_ruta_desembolso'), {
 	</div>
 	<div class="form-group form-group-sm col-sm-12">
 		<div class="row">
+			<label for="first_name" class="col-sm-3 col-form-label">Importe</label>
+			<div class="col-sm-9">
+				<input class="form-control form-control-sm" id="importe" name="importe" placeholder="Ingresar el importe">
+			</div>
+		</div>
+	</div>
+	<div class="form-group form-group-sm col-sm-12">
+		<div class="row">
 			<label for="Street" class="col-sm-3 col-form-label">
 				<strong><a class="edicion mt_20 mb_10" id="link_ruta_desembolso" href="javascript:void(0)">Adjuntar Imagen</a></strong>
 			</label>

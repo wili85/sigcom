@@ -112,12 +112,18 @@ class ProduccionController extends Controller
     {
 		$produccion = new Produccione;
 		$produccion->fecha = Carbon::now()->timezone('America/Lima')->format('Y-m-d H:i:s');
-		$produccion->id_persona = $request->persona_id;
-		$produccion->id_empresa = 1;
+		if($request->persona_id>0){
+			$produccion->id_persona = $request->persona_id;
+			$produccion->id_empresa = 1;
+		}else{
+			$produccion->id_persona = 33;
+			$produccion->id_empresa = $request->id_ubicacion;
+		}
 		$produccion->estado = "1";
 		$produccion->save();
 		$id_produccion = $produccion->id;
 		
+		$total = 0;
 		if(isset($request->id_especie)):
 			foreach ($request->id_especie as $key => $value):
 				if($request->id_especie[$key]!=""){
@@ -135,9 +141,15 @@ class ProduccionController extends Controller
 					$produccionDetalle->cantidad = $cantidad_especie;
 					$produccionDetalle->estado = "1";
 					$produccionDetalle->save();
+					
+					$total+=$precio_especie * $cantidad_especie;
 				}
 			endforeach;
 		endif;
+		
+		$produccion_act = Produccione::find($id_produccion);
+		$produccion_act->total = $total;
+		$produccion_act->save();
 		
 		Session::flash('flash_message', 'Produccion registrado exitosamente');
 		

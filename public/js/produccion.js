@@ -1075,7 +1075,7 @@ $(document).ready(function () {
 			// alert(JSON.stringify(data));
 			   var resp = $.map(data,function(obj){
 					// console.log(obj.id);
-					var hash = {key: obj.id, direccion: obj.direccion, ruc: obj.ruc, razon_social: obj.razon_social, value: obj.razon_social, id_ubicacion: obj.id_ubicacion};
+					var hash = {key: obj.id, direccion: obj.direccion, ruc: obj.ruc, razon_social: obj.razon_social, value: obj.razon_social, id_ubicacion: obj.id};
 					return hash;
 			   }); 
 			   //alert(JSON.stringify(resp));

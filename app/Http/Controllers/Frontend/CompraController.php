@@ -116,12 +116,18 @@ class CompraController extends Controller
     {
 		$compra = new Compra;
 		$compra->fecha = Carbon::now()->timezone('America/Lima')->format('Y-m-d H:i:s');
-		$compra->id_persona = $request->persona_id;
-		$compra->id_empresa = 1;
+		if($request->persona_id>0){
+			$compra->id_persona = $request->persona_id;
+			$compra->id_empresa = 1;
+		}else{
+			$compra->id_persona = 33;
+			$compra->id_empresa = $request->id_ubicacion;
+		}
 		$compra->estado = "1";
 		$compra->save();
 		$id_compra = $compra->id;
 		
+		$total = 0;
 		if(isset($request->id_especie)):
 			foreach ($request->id_especie as $key => $value):
 				if($request->id_especie[$key]!=""){
@@ -139,9 +145,15 @@ class CompraController extends Controller
 					$compraDetalle->cantidad = $cantidad_especie;
 					$compraDetalle->estado = "1";
 					$compraDetalle->save();
+					
+					$total+=$precio_especie * $cantidad_especie;
 				}
 			endforeach;
 		endif;
+		
+		$compra_act = Compra::find($id_compra);
+		$compra_act->total = $total;
+		$compra_act->save();
 		
 		Session::flash('flash_message', 'Compra registrado exitosamente');
 		
@@ -192,6 +204,7 @@ class CompraController extends Controller
 		$compraPago->id_compra = $request->id_solicitud;
 		$compraPago->fecha = Carbon::now()->timezone('America/Lima')->format('Y-m-d H:i:s');
 		$compraPago->id_forma_pago = $request->id_tipodesembolso;
+		$compraPago->importe = $request->importe;
 		//$compraPago->ruta_pago = $new_ruta_desembolso;
 		$compraPago->estado = "1";
 		$compraPago->save();

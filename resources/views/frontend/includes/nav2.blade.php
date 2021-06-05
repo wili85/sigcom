@@ -16,15 +16,6 @@
 			
 			<a class="btn btn-default" id="change-color-3" style="color:#FFFFFF">Barra Titulo</a>
 		
-            @if(config('locale.status') && count(config('locale.languages')) > 1)
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLanguageLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">@lang('menus.language-picker.language') ({{ strtoupper(app()->getLocale()) }})</a>
-
-                    @include('includes.partials.lang')
-                </li>
-            @endif
-
             @auth
                 <li class="nav-item"><a href="{{route('frontend.user.dashboard')}}" class="nav-link {{ active_class(Route::is('frontend.user.dashboard')) }}">Inicio</a></li>
             @endauth
@@ -40,20 +31,78 @@
 
 				<li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Solicitud</a>
+                    aria-haspopup="true" aria-expanded="false">Compra</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
-                            <a href="{{route('frontend.solicitud.create')}}" class="dropdown-item">Nueva Solicitud</a>
-							<a href="{{route('frontend.solicitud.create_desembolso')}}" class="dropdown-item">Desembolso</a>
+							<a href="{{route('frontend.compra.listar')}}" class="dropdown-item">Consulta de Compras</a>
+							<a href="{{route('frontend.compra.create')}}" class="dropdown-item">Nueva Compra</a>
+							<a href="{{route('frontend.compra.create_desembolso')}}" class="dropdown-item">Desembolso</a>
                     </div>
                 </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Producci&oacute;n</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+							<a href="{{route('frontend.produccion.listar')}}" class="dropdown-item">Consulta de Producci&oacute;nes</a>
+							<a href="{{route('frontend.produccion.create')}}" class="dropdown-item">Nueva Producci&oacute;n</a>
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Venta</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+							<a href="{{route('frontend.venta.listar')}}" class="dropdown-item">Consulta de Ventas</a>
+							<a href="{{route('frontend.venta.create')}}" class="dropdown-item">Nueva Venta</a>
+							<a href="{{route('frontend.venta.create_desembolso')}}" class="dropdown-item">Desembolso</a>
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Estado de Cuenta</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+                            <a href="{{route('frontend.cronograma.create_ingreso')}}" class="dropdown-item">Nuevo Ingreso</a>
+                    </div>
+                </li>
+				
 				<li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Mantenimiento</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
                             <a href="{{route('frontend.manten.create')}}" class="dropdown-item">Tabla Maestra</a>
-							<a href="{{route('frontend.manten.create_color')}}" class="dropdown-item">Configuraci&oacute;n Colores</a>
+							<a href="{{route('frontend.persona.listar')}}" class="dropdown-item">Persona</a>
+							<a href="{{route('frontend.empresa.listar')}}" class="dropdown-item">Empresa</a>
+							
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Configuraci&oacute;n</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+                            <a href="{{route('frontend.manten.create_color')}}" class="dropdown-item">Configuraci&oacute;n Colores</a>
 							<a href="{{route('frontend.manten.send_restablecer_color')}}" class="dropdown-item">Reestablecer Colores</a>
                     </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Reporte</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+                            <a href="{{route('frontend.reporte.consulta_consolidado')}}" class="dropdown-item">Consolidado Estado Situacional</a>
+							<a href="{{route('frontend.reporte.consulta_vencidos')}}" class="dropdown-item">Consulta de Prestamos Vencidos</a>
+							<!--<a href="{{route('frontend.reporte.consulta_individual')}}" class="dropdown-item">Individula Estado Situacional</a>-->
+							<a href="{{route('frontend.reporte.resumen_ingreso')}}" class="dropdown-item">Resumen de Ingreso Diario</a>
+                    </div>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Gerencial</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
+						<a href="{{route('frontend.grafico.all')}}" class="dropdown-item">Informe de Gesti&oacute;n</a>
+					</div>
                 </li>
 
                 <li class="nav-item dropdown">

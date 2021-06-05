@@ -25,8 +25,10 @@ Begin
 
 	p_pagina=(p_pagina::Integer-1)*p_limit::Integer;
 	
-	v_campos=' t1.id,to_char(t1.fecha,''dd-mm-yyyy'')fecha,t3.numero_documento,t3.nombres||'' ''||t3.apellido_paterno||'' ''||t3.apellido_materno persona
-,t4.denominacion producto,t5.denominacion unidad,t2.cantidad,t2.precio,t1.total,
+	v_campos=' t1.id,to_char(t1.fecha,''dd-mm-yyyy'')fecha
+,case when t1.id_persona=33 then t4.ruc else t3.numero_documento end numero_documento
+,case when t1.id_persona=33 then t4.razon_social else t3.nombres||'' ''||t3.apellido_paterno||'' ''||t3.apellido_materno end persona
+,t5.denominacion producto,t6.denominacion unidad,t2.cantidad,t2.precio,t1.total,
 case 
 	when t1.estado=''1'' Then ''Registrado''
 	when t1.estado=''2'' Then ''Anulado''
@@ -37,8 +39,9 @@ end estado
 	v_tabla='from compras t1
 inner join compra_detalles t2 on t1.id=t2.id_compra
 inner join personas t3 on t1.id_persona=t3.id
-inner join productos t4 on t2.id_producto=t4.id
-inner join tabla_maestras t5 on t2.id_unidad=t5.id ';
+inner join empresas t4 on t1.id_empresa=t4.id
+inner join productos t5 on t2.id_producto=t5.id
+inner join tabla_maestras t6 on t2.id_unidad=t6.id ';
 	
 	v_where = ' Where 1=1 ';
 
