@@ -202,7 +202,7 @@ class MantenController extends Controller
 	public function send_restablecer_color(Request $request){
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',1)->first();
-		$tablaMaestra->tipo_nombre = "rgba(146,130,130,0.73)";
+		$tablaMaestra->tipo_nombre = "#F2F3F7";
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',2)->first();
@@ -210,23 +210,23 @@ class MantenController extends Controller
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',3)->first();
-		$tablaMaestra->tipo_nombre = "#46d46e";
+		$tablaMaestra->tipo_nombre = "#1D6FAC";
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',4)->first();
-		$tablaMaestra->tipo_nombre = "#239244";
+		$tablaMaestra->tipo_nombre = "#FBD927";
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',5)->first();
-		$tablaMaestra->tipo_nombre = "#4cb954";
+		$tablaMaestra->tipo_nombre = "#1D6FAC";
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',6)->first();
-		$tablaMaestra->tipo_nombre = "#F2F2F2";
+		$tablaMaestra->tipo_nombre = "#F2F3F7";
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',7)->first();
-		$tablaMaestra->tipo_nombre = "#30b73c";
+		$tablaMaestra->tipo_nombre = "#FBD927";
 		$tablaMaestra->save();
 		
 		$tablaMaestra = TablaMaestra::where('tipo','CSS')->where('codigo',8)->first();

@@ -34,29 +34,24 @@
                 @endif
 				-->
             @else
-
+				<!--
 				<li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Solicitud</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
                             <a href="{{route('frontend.solicitud.create')}}" class="dropdown-item">Nueva Solicitud</a>
 							<a href="{{route('frontend.solicitud.create_desembolso')}}" class="dropdown-item">Desembolso</a>
-                            <!--
-                            <a href="{{route('frontend.solicitud.create_cronograma')}}" class="dropdown-item">Cronográma</a>
-                            -->
                     </div>
                 </li>
+				-->
 				
 				<li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownPrueba" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Compra</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
-                            <!--<a href="{{route('frontend.solicitud.create')}}" class="dropdown-item">Nueva Solicitud</a>
-							<a href="{{route('frontend.solicitud.create_desembolso')}}" class="dropdown-item">Desembolso</a>-->
-                            <!--
-                            <a href="{{route('frontend.solicitud.create_cronograma')}}" class="dropdown-item">Cronográma</a>
-                            -->
 							<a href="{{route('frontend.compra.listar')}}" class="dropdown-item">Consulta de Compras</a>
+							<a href="{{route('frontend.compra.create')}}" class="dropdown-item">Nueva Compra</a>
+							<a href="{{route('frontend.compra.create_desembolso')}}" class="dropdown-item">Desembolso</a>
                     </div>
                 </li>
 				
@@ -65,6 +60,7 @@
                     aria-haspopup="true" aria-expanded="false">Producci&oacute;n</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
 							<a href="{{route('frontend.produccion.listar')}}" class="dropdown-item">Consulta de Producci&oacute;nes</a>
+							<a href="{{route('frontend.produccion.create')}}" class="dropdown-item">Nueva Producci&oacute;n</a>
                     </div>
                 </li>
 				
@@ -73,6 +69,8 @@
                     aria-haspopup="true" aria-expanded="false">Venta</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownPrueba">
 							<a href="{{route('frontend.venta.listar')}}" class="dropdown-item">Consulta de Ventas</a>
+							<a href="{{route('frontend.venta.create')}}" class="dropdown-item">Nueva Venta</a>
+							<a href="{{route('frontend.venta.create_desembolso')}}" class="dropdown-item">Desembolso</a>
                     </div>
                 </li>
 				

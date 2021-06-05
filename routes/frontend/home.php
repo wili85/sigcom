@@ -100,12 +100,41 @@ Route::get('empresa/obtener_chofer/{id}', [EmpresaController::class, 'obtener_ch
 
 Route::get('compra/listar', [CompraController::class, 'listar'])->name('compra.listar');
 Route::post('compra/listar_compra_ajax', [CompraController::class, 'listar_compra_ajax'])->name('compra.listar_compra_ajax');
+Route::get('compra/create', [CompraController::class, 'create'])->name('compra.create');
+Route::get('compra/listar_empresas/{term}', [CompraController::class, 'listar_empresas'])->name('compra.listar_empresas');
+Route::get('compra/listar_personas/{term}', [CompraController::class, 'listar_personas'])->name('compra.listar_personas');
+Route::get('compra/obtener_producto_medida/{id_persona}/{id_empresa}/{id_producto}', [CompraController::class, 'obtener_producto_medida'])->name('compra.obtener_producto_medida');
+Route::get('compra/obtener_precio_producto_medida/{id_persona}/{id_empresa}/{id_producto}/{id_unidad}', [CompraController::class, 'obtener_precio_producto_medida'])->name('compra.obtener_precio_producto_medida');
+Route::post('compra/send_compra', [CompraController::class, 'send_compra'])->name('compra.send_compra');
+Route::get('compra/create_desembolso', [CompraController::class, 'create_desembolso'])->name('compra.create_desembolso');
+Route::get('compra/obtener_desembolso/{id}', [CompraController::class, 'obtener_desembolso'])->name('compra.obtener_desembolso');
+Route::get('compra/obtener_cronograma/{id}', [CompraController::class, 'obtener_cronograma'])->name('compra.obtener_cronograma');
+Route::post('compra/upload', [CompraController::class, 'upload'])->name('compra.upload');
+Route::post('compra/send_pago', [CompraController::class, 'send_pago'])->name('compra.send_pago');
 
 Route::get('produccion/listar', [ProduccionController::class, 'listar'])->name('produccion.listar');
 Route::post('produccion/listar_produccion_ajax', [ProduccionController::class, 'listar_produccion_ajax'])->name('produccion.listar_produccion_ajax');
+Route::get('produccion/create', [ProduccionController::class, 'create'])->name('produccion.create');
+Route::get('produccion/listar_empresas/{term}', [ProduccionController::class, 'listar_empresas'])->name('produccion.listar_empresas');
+Route::get('produccion/listar_personas/{term}', [ProduccionController::class, 'listar_personas'])->name('produccion.listar_personas');
+Route::get('produccion/obtener_producto_medida/{id_persona}/{id_empresa}/{id_producto}', [ProduccionController::class, 'obtener_producto_medida'])->name('produccion.obtener_producto_medida');
+Route::get('produccion/obtener_precio_producto_medida/{id_persona}/{id_empresa}/{id_producto}/{id_unidad}', [ProduccionController::class, 'obtener_precio_producto_medida'])->name('produccion.obtener_precio_producto_medida');
+Route::post('produccion/send_produccion', [ProduccionController::class, 'send_produccion'])->name('produccion.send_produccion');
 
 Route::get('venta/listar', [VentaController::class, 'listar'])->name('venta.listar');
 Route::post('venta/listar_venta_ajax', [VentaController::class, 'listar_venta_ajax'])->name('venta.listar_venta_ajax');
+Route::get('venta/create', [VentaController::class, 'create'])->name('venta.create');
+Route::get('venta/listar_empresas/{term}', [VentaController::class, 'listar_empresas'])->name('venta.listar_empresas');
+Route::get('venta/listar_personas/{term}', [VentaController::class, 'listar_personas'])->name('venta.listar_personas');
+Route::get('venta/obtener_producto_medida/{id_persona}/{id_empresa}/{id_producto}', [VentaController::class, 'obtener_producto_medida'])->name('venta.obtener_producto_medida');
+Route::get('venta/obtener_precio_producto_medida/{id_persona}/{id_empresa}/{id_producto}/{id_unidad}', [VentaController::class, 'obtener_precio_producto_medida'])->name('venta.obtener_precio_producto_medida');
+Route::post('venta/send_venta', [VentaController::class, 'send_venta'])->name('venta.send_venta');
+Route::get('venta/create_desembolso', [VentaController::class, 'create_desembolso'])->name('venta.create_desembolso');
+Route::get('venta/obtener_desembolso/{id}', [VentaController::class, 'obtener_desembolso'])->name('venta.obtener_desembolso');
+Route::get('venta/obtener_cronograma/{id}', [VentaController::class, 'obtener_cronograma'])->name('venta.obtener_cronograma');
+Route::post('venta/upload', [VentaController::class, 'upload'])->name('venta.upload');
+Route::post('venta/send_pago', [VentaController::class, 'send_pago'])->name('venta.send_pago');
+
 
 /*********test*************/
 Route::get('solicitud/create_test', [SolicitudController::class, 'create_test'])->name('solicitud.create_test');

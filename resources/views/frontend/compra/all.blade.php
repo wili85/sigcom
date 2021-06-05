@@ -273,7 +273,7 @@ label.form-control-sm{
 							<th>Documento</th>
 							<th>Producto</th>
 							<th>Unnidad</th>
-							<th style="width:50px" class="text-right">Cantidad</th>
+							<th class="text-right" style="width:50px">Cantidad</th>
 							<th class="text-right">Precio</th>
 							<th class="text-right">Total</th>
                             <th class="text-center">Estado</th>
